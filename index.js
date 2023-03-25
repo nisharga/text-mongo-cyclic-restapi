@@ -14,6 +14,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//Routes go here
+app.all("*", (req, res) => {
+  res.json({ "every thing": "is awesome" });
+});
+
 app.use("/api", getAllStudentRoute);
 app.use("/api2", getByID);
 app.use("/api3", studentAddByPost);
